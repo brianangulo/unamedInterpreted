@@ -1,0 +1,10 @@
+//
+// Created by Brian Angulo on 2/22/23.
+//
+
+#ifndef INTERPRETER_C_ERRORS_H
+#define INTERPRETER_C_ERRORS_H
+
+#endif //INTERPRETER_C_ERRORS_H
+
+typedef enum ERROR_TYPES {ARRAY_OUT_OF_BOUNDS, MEM_ALLOC_ERR, LAST_ERROR} ERROR_TYPES;
