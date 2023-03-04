@@ -29,11 +29,11 @@ void readFile(const char *fileLocation, char *buffer, size_t bufferSize)
         exit(EXIT_FAILURE);
     }
     // reading char stream into buffer
-    int character;
+    char character = 0;
     size_t bufferPos = 0;
     while (character != EOF && bufferPos < bufferSize)
     {
-        character = fgetc(pOpenFile);
+        character = (char) fgetc(pOpenFile);
         buffer[bufferPos] = character;
         bufferPos++;
     }
