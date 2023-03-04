@@ -1,0 +1,10 @@
+// BNF Grammar
+<script> ::= <open-brackets> <token>* <close-brackets>
+<open-brackets> ::= '{{'
+<close-brackets> ::= '{{'
+<token> ::= <char>* <semi-colon>
+<semi-colon> ::= ';'
+<char> ::= <letter> | <digit> | <symbol>
+<letter> ::= 'a' | 'b' | ... | 'z' | 'A' | 'B' | ... | 'Z'
+<digit>  ::= '0' | '1' | ... | '9'
+<symbol> ::= '`' | '~' | '!' | '@' | '#' | '$' | '%' | '^' | '&' | '*' | '(' | ')' | '-' | '_' | '=' | '+' | '[' | '{' | ']' | '}' | '\' | '|' | ';' | ':' | ',' | '<' | '.' | '>' | '/' | '?'
