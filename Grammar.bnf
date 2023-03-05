@@ -1,9 +1,10 @@
 // BNF Grammar
-<script> ::= <open-brackets> <token>* <close-brackets>
-<open-brackets> ::= '{{'
-<close-brackets> ::= '{{'
-<token> ::= <char>* <semi-colon>
-<semi-colon> ::= ';'
+<script> ::= '{{' <expression>* '}}'
+<expression> ::= <func_expression>
+<func_expression> ::= <identifier> <func_argument>* ';'
+<func_argument> ::= <string> | <identifier>
+<identifier> ::= <char>+
+<string> ::= '"'<char>*'"' | "'"<char>*"'"
 <char> ::= <letter> | <digit> | <symbol>
 <letter> ::= 'a' | 'b' | ... | 'z' | 'A' | 'B' | ... | 'Z'
 <digit>  ::= '0' | '1' | ... | '9'
