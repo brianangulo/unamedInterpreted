@@ -15,12 +15,14 @@ FetchContent_MakeAvailable(googletest)
 
 enable_testing()
 
-add_executable(interpreter_c main.c lexer/tokens.c file/file.c tests/hello_test.cc)
+add_executable(interpreter_c main.c lexer/tokens.c file/file.c)
+
+add_executable(interpreter_tests tests/hello_test.cc)
 
 target_link_libraries(
-        interpreter_c
+        interpreter_tests
         GTest::gtest_main
 )
 
 include(GoogleTest)
-gtest_discover_tests(interpreter_c)
+gtest_discover_tests(interpreter_tests)
