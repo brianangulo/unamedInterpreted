@@ -17,7 +17,7 @@ enable_testing()
 
 add_executable(interpreter_c main.c lexer/tokens.c file/file.c)
 
-add_executable(interpreter_tests tests/hello_test.cc)
+add_executable(interpreter_tests tests/lexer_tests.cc lexer/tokens.c)
 
 target_link_libraries(
         interpreter_tests
