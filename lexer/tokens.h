@@ -45,6 +45,9 @@ typedef struct TokensDynamicArray
     size_t currMaxArrLen;
 } TokensDynamicArray;
 
+// frees resources for a token dynamic array
+void deleteTokenArray(TokensDynamicArray array);
+
 // it mutates the passed in array directly
 // appends a new token at the end of the array and returns the index of such token
 // it will increment the array's size if needed using the doubling approach

@@ -41,6 +41,11 @@ TokensDynamicArray buildNewArray(size_t arrSize)
     return tmpArr;
 }
 
+void deleteTokenArray(TokensDynamicArray array)
+{
+    free(array.array);
+}
+
 uint32_t appendToken(TokensDynamicArray *array, Token newToken)
 {
     uint32_t nextIdx = array->nextIdx;
