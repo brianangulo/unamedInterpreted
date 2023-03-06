@@ -1,11 +1,15 @@
 // BNF Grammar
-<script> ::= '{{' <expression>* '}}'
-<expression> ::= <func_expression>
-<func_expression> ::= <identifier> <func_argument>* ';'
+<script> ::= '{{' <expression> '}}'
+<expression> ::= <func_call> <expression_tail>
+<expression_tail> ::= <func_call> <expression_tail> | ε
+<func_call> ::= <identifier> '(' <func_argument_list> ')' ';'
+<func_argument_list> ::= <func_argument> <func_argument_tail>
+<func_argument_tail> ::= ',' <func_argument> <func_argument_tail> | ε
 <func_argument> ::= <string> | <identifier>
-<identifier> ::= <char>+
-<string> ::= '"'<char>*'"' | "'"<char>*"'"
+<identifier> ::= <letter>+ | <digit>+ | <letter><digit>+
+<string> ::= '"' <char>* '"' | "'" <char>* "'"
 <char> ::= <letter> | <digit> | <symbol>
 <letter> ::= 'a' | 'b' | ... | 'z' | 'A' | 'B' | ... | 'Z'
 <digit>  ::= '0' | '1' | ... | '9'
-<symbol> ::= '`' | '~' | '!' | '@' | '#' | '$' | '%' | '^' | '&' | '*' | '(' | ')' | '-' | '_' | '=' | '+' | '[' | '{' | ']' | '}' | '\' | '|' | ';' | ':' | ',' | '<' | '.' | '>' | '/' | '?'
+// basically all symbols
+<symbol> ::= '`' | '~' | '!' | '@' | '#' | ... | ';' | ':' | ',' | '<' | '.' | '>' | '/' | '?'
